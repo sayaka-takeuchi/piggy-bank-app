@@ -1,0 +1,4 @@
+.money-counters {
+  display: flex;
+  flex-wrap: wrap;
+}
