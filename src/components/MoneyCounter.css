@@ -6,6 +6,12 @@
   align-items: center;
 }
 
+.money-counter__buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .money-counter > img {
   max-width: 30%;
   height: auto;

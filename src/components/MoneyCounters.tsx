@@ -1,24 +1,28 @@
-import React from 'react';
+import React, {useState} from 'react';
 import MoneyCounter from '../components/MoneyCounter';
-import { imgUrl } from '../helper.ts/url.helper';
 import './MoneyCounters.css';
 
 const MoneyCounters = () => {
+  const [sum, setSum] = useState<number>(0);
   return (
     <>
       <h1>合計金額</h1>
       <div className="money-counters">
-        <MoneyCounter imagePath={`${imgUrl}/10,000_yen_bill.png`} />
-        <MoneyCounter imagePath={`${imgUrl}/5,000_yen_bill.png`} />
-        <MoneyCounter imagePath={`${imgUrl}/1,000_yen_bill.png`} />
-        <MoneyCounter imagePath={`${imgUrl}/money_coin_500.png`} />
-        <MoneyCounter imagePath={`${imgUrl}/money_coin_100.png`} />
-        <MoneyCounter imagePath={`${imgUrl}/money_coin_50.png`} />
-        <MoneyCounter imagePath={`${imgUrl}/money_coin_10.png`} />
-        <MoneyCounter imagePath={`${imgUrl}/money_coin_5.png`} />
-        <MoneyCounter imagePath={`${imgUrl}/money_coin_1.png`} />
+        <MoneyCounter  unit={10000} setSum={setSum} sum={sum}/>
+        <MoneyCounter  unit={5000} setSum={setSum} sum={sum}/>
+        <MoneyCounter  unit={1000} setSum={setSum} sum={sum}/>
+        <MoneyCounter  unit={500} setSum={setSum} sum={sum}/>
+        <MoneyCounter  unit={100 } setSum={setSum} sum={sum}/>
+        <MoneyCounter  unit={50} setSum={setSum} sum={sum}/>
+        <MoneyCounter  unit={10} setSum={setSum} sum={sum}/>
+        <MoneyCounter  unit={5} setSum={setSum} sum={sum}/>
+        <MoneyCounter  unit={1} setSum={setSum} sum={sum}/>
       </div>
-      <button>保存</button>
+      <div className={"d-flex justify-content-center"}>
+        <button type="button" className="btn btn-danger mr-3" onClick={() => setSum(0)}>全てリセット</button>
+        <input className="btn btn-primary" type="submit" value="送信" />
+      </div>
+
     </>
   );
 };
