@@ -1,4 +1,16 @@
 .money-counters {
-  display: flex;
-  flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #00b4d2;
+    font-family: 'Titillium Web', sans-serif;
+    padding: .5rem 0;
+}
+
+.selected-total-amount {
+    display: block;
+    text-align: center;
+    font-size: 32px;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: bold;
+    margin-top: 1rem;
 }
